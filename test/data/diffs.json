@@ -1,0 +1,118 @@
+[
+  {
+    "type": "CHANGE",
+    "reason": "VALUE",
+    "baseValue": null,
+    "theirsValue": "564332213A0100003C56616C68616C6C61506C61746520706C7567696E56657273696F6E3D22312E352E30646F74323522207072657365744E616D653D2244656661756C7422204D69783D2231222050726544656C61793D2230222044656361793D22302E35222053697A653D22302E35222057696474683D22302E3522204D6F64526174653D22302E333635333434353534313835383637333122204D6F6444657074683D223022204C6F774551467265713D22302E333438373733393236343936353035373422204C6F7745514761696E3D22302E352220486967684551467265713D22302E3522204869676845514761696E3D22302E352220547970653D22302E30343136363636363739303834333030393922206D69784C6F636B3D22302220756957696474683D22383235222075694865696768743D22343335222F3E00",
+    "oursValue": "754332213A0100003C56616C68616C6C61506C61746520706C7567696E56657273696F6E3D22312E352E30646F74323522207072657365744E616D653D2244656661756C7422204D69783D2231222050726544656C61793D2230222044656361793D22302E35222053697A653D22302E35222057696474683D22302E3522204D6F64526174653D22302E333635333434353534313835383637333122204D6F6444657074683D223022204C6F774551467265713D22302E333438373733393236343936353035373422204C6F7745514761696E3D22302E352220486967684551467265713D22302E3522204869676845514761696E3D22302E352220547970653D22302E30343136363636363739303834333030393922206D69784C6F636B3D22302220756957696474683D22383235222075694865696768743D22343335222F3E00",
+    "x_path": "/#document[0]/AudioTrack/V/Buffer",
+    "conflict": true,
+    "node": "Buffer",
+    "rule": {
+      "target": "all",
+      "rule": "none"
+    }
+  },
+  {
+    "type": "CHANGE",
+    "reason": "ATTR",
+    "baseValue": "true",
+    "theirsValue": "true",
+    "oursValue": "false",
+    "x_path": "/#document[0]/AudioTrack/IsContentSelectedInDocument[@Value]",
+    "conflict": false,
+    "node": "IsContentSelectedInDocument",
+    "rule": {
+      "target": "all",
+      "rule": "none"
+    }
+  },
+  {
+    "type": "CHANGE",
+    "reason": "ATTR",
+    "baseValue": "1-Audio",
+    "theirsValue": "1-Atmos Calm 130 bpm",
+    "oursValue": "STUFFS",
+    "x_path": "/#document[0]/AudioTrack/Name/EffectiveName[@Value]",
+    "conflict": true,
+    "node": "EffectiveName",
+    "rule": {
+      "target": "all",
+      "rule": "none"
+    }
+  },
+  {
+    "type": "CHANGE",
+    "reason": "ATTR",
+    "baseValue": "",
+    "theirsValue": "",
+    "oursValue": "STUFFS",
+    "x_path": "/#document[0]/AudioTrack/Name/UserName[@Value]",
+    "conflict": false,
+    "node": "UserName",
+    "rule": {
+      "target": "all",
+      "rule": "none"
+    }
+  },
+  {
+    "type": "CHANGE",
+    "reason": "ATTR",
+    "baseValue": "20",
+    "theirsValue": "20",
+    "oursValue": "14",
+    "x_path": "/#document[0]/AudioTrack/Color[@Value]",
+    "conflict": false,
+    "node": "Color",
+    "rule": {
+      "target": "all",
+      "rule": "none"
+    }
+  },
+  {
+    "type": "CHANGE",
+    "reason": "ORDER",
+    "x_path": "/#document[0]/AudioTrack/AutomationEnvelopes/Envelopes",
+    "conflict": true
+  },
+  {
+    "type": "CHANGE",
+    "reason": "ORDER",
+    "x_path": "/#document[0]/AudioTrack/AutomationEnvelopes/Envelopes",
+    "conflict": true
+  },
+  {
+    "type": "CREATE",
+    "reason": "NODE",
+    "baseValue": null,
+    "theirsValue": null,
+    "oursValue": "<AutomationEnvelope Id=\"0\">\n\t\t\t\t\t\t\t<EnvelopeTarget>\n\t\t\t\t\t\t\t\t<PointeeId Value=\"27381\"/>\n\t\t\t\t\t\t\t</EnvelopeTarget>\n\t\t\t\t\t\t\t<Automation>\n\t\t\t\t\t\t\t\t<Events>\n\t\t\t\t\t\t\t\t\t<FloatEvent Id=\"38\" Time=\"-63072000\" Value=\"0.8139066696\"/>\n\t\t\t\t\t\t\t\t\t<FloatEvent Id=\"37\" Time=\"466.29450549450547\" Value=\"0.8139066696\"/>\n\t\t\t\t\t\t\t\t\t<FloatEvent Id=\"113\" Time=\"484\" Value=\"0\"/>\n\t\t\t\t\t\t\t\t</Events>\n\t\t\t\t\t\t\t\t<AutomationTransformViewState>\n\t\t\t\t\t\t\t\t\t<IsTransformPending Value=\"false\"/>\n\t\t\t\t\t\t\t\t\t<TimeAndValueTransforms/>\n\t\t\t\t\t\t\t\t</AutomationTransformViewState>\n\t\t\t\t\t\t\t</Automation>\n\t\t\t\t\t\t</AutomationEnvelope>",
+    "x_path": "/#document[0]/AudioTrack/AutomationEnvelopes/Envelopes[1]/AutomationEnvelope",
+    "conflict": false,
+    "node": "AutomationEnvelope",
+    "rule": {
+      "target": "all",
+      "rule": "none"
+    }
+  },
+  {
+    "type": "CREATE",
+    "reason": "NODE",
+    "baseValue": null,
+    "theirsValue": null,
+    "oursValue": "<AutomationEnvelope Id=\"1\">\n\t\t\t\t\t\t\t<EnvelopeTarget>\n\t\t\t\t\t\t\t\t<PointeeId Value=\"27364\"/>\n\t\t\t\t\t\t\t</EnvelopeTarget>\n\t\t\t\t\t\t\t<Automation>\n\t\t\t\t\t\t\t\t<Events>\n\t\t\t\t\t\t\t\t\t<FloatEvent Id=\"60\" Time=\"-63072000\" Value=\"0\"/>\n\t\t\t\t\t\t\t\t\t<FloatEvent Id=\"59\" Time=\"396\" Value=\"0\"/>\n\t\t\t\t\t\t\t\t\t<FloatEvent Id=\"1\" Time=\"444\" Value=\"3.73015881\"/>\n\t\t\t\t\t\t\t\t</Events>\n\t\t\t\t\t\t\t\t<AutomationTransformViewState>\n\t\t\t\t\t\t\t\t\t<IsTransformPending Value=\"false\"/>\n\t\t\t\t\t\t\t\t\t<TimeAndValueTransforms/>\n\t\t\t\t\t\t\t\t</AutomationTransformViewState>\n\t\t\t\t\t\t\t</Automation>\n\t\t\t\t\t\t</AutomationEnvelope>",
+    "x_path": "/#document[0]/AudioTrack/AutomationEnvelopes/Envelopes[3]/AutomationEnvelope",
+    "conflict": false,
+    "node": "AutomationEnvelope",
+    "rule": {
+      "target": "all",
+      "rule": "none"
+    }
+  },
+  {
+    "type": "CHANGE",
+    "reason": "CHILDREN",
+    "x_path": "/#document[0]/AudioTrack/DeviceChain",
+    "conflict": true
+  }
+]
