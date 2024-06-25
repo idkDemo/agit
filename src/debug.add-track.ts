@@ -4,18 +4,19 @@ import { parse, build } from './lib/parser';
 import { updateTrack } from "./lib/update-track";
 import { createCommand } from "commander";
 import { getLastTrackId } from "./lib/ableton";
+import { $ } from 'bun';
 
 const command = createCommand('debug-add-track')
     .description('Add a track to an Ableton project')
     .option('-p, --path <path>', 'Path to the Ableton project')
     .option('-n, --next-pointee-id <nextPointeeId>', 'Next pointee id')
     .action(async (flags, command) => {
-        const _path = flags.path || process.cwd();
+        const _path = flags.path || await $`git rev-parse --show-toplevel`.text();
 
         const file = await readFile(_path).text();
         const parsed = parse(file);
 
-        const project = readProjectInfo(join(dirname(_path), '../', '../'));
+        const project = await readProjectInfo(join(_path));
         if (!project || !project.places) {
             console.error('No project info found');
             process.exit(1);

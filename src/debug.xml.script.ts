@@ -3,14 +3,15 @@ import { exists } from 'fs/promises';
 import { unzip } from './lib/parser';
 import { createCommand } from "commander";
 import { join } from 'path';
+import { $ } from 'bun';
 
 const command = createCommand('debug-als')
     .description('Extract an ableton project xml file and put it in a debug folder for debugging purposes')
     .option('-p, --path <path>', 'Path to the Ableton project')
     .action(async (flags, command) => {
-        const _path = flags.path || process.cwd();
+        const _path = flags.path || await $`git rev-parse --show-toplevel`.text();
 
-        const project = isAbletonProject(process.cwd()) || flags.path && isAbletonProject(flags.path);
+        const project = isAbletonProject(_path);
         if (!project) {
             console.error('Not an Ableton project');
             process.exit(1);

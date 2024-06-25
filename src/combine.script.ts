@@ -8,21 +8,22 @@ import { combine } from './lib/combiner';
 
 import { createCommand } from 'commander';
 import { hookConsole, Levels } from './lib/logger';
+import { $ } from 'bun';
 
 const command = createCommand('combine')
     .description('Combine an Ableton project')
     .option('-p, --path <path>', 'Path to the Ableton project')
     .option('-d, --debug', 'Enable debug mode')
     .action(async (flags, command) => {
-        const _path = flags.path || process.cwd();
+        const _path = flags.path || await $`git rev-parse --show-toplevel`.text();
 
-        const project = readProjectInfo(_path);
+        const project = await readProjectInfo(_path);
         if (!project) {
             console.error('No project info found');
             process.exit(1);
         }
 
-        const ableton_project = isAbletonProject(process.cwd()) || flags.path && isAbletonProject(flags.path);
+        const ableton_project = isAbletonProject(_path);
         if (!ableton_project) {
             console.error('Cannot find an Ableton project in the current directory or the specified');
             process.exit(1);

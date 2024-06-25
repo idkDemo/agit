@@ -6,7 +6,7 @@ import progress from 'progress-stream';
 import type { Event, UploadEvent, DownloadEvent, TransferError, FolderPath, FilePath } from './types';
 import { createCommand } from "commander";
 
-const command = createCommand('folder-agent')
+const command = createCommand('lfs-folder-agent')
     .description('Folder agent for git-lfs')
     .option('-p, --path <path>', 'Path to the git repository')
     .action(async (flags, command) => {

@@ -73,6 +73,6 @@ export async function readDirRecursively(dir: string): Promise<string[]> {
     return files;
 }
 
-export function readProjectInfo(_path: string): ProjectInfo {
-    return JSON.parse(fs.readFileSync(join(_path, "project.json"), "utf-8"));
+export async function readProjectInfo(_path: string): Promise<ProjectInfo> {
+    return JSON.parse(await readFile(join(_path, "project.json")).text());
 }

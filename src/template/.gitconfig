@@ -1,0 +1,13 @@
+[diff "zcat"]
+	textconv = zcat
+[merge 'agit']
+    name=agit
+    driver=agit merge %O %A %B %L %P
+    recursive=binary
+
+[lfs]
+	repositoryformatversion = 0
+	standalonetransferagent = lfs-folder
+[lfs "customtransfer.lfs-folder"]
+	path = agit lfs-folder-agent
+	args = "PUT YOUR PATH HERE"

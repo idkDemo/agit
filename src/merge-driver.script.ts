@@ -1,10 +1,10 @@
 import { createCommand } from "commander";
 import { formatJSON, readFile, readProjectInfo, writeFile } from "./lib/fs";
 import { build, parse, formatXML } from './lib/parser';
-import { getNode } from "./lib/utils";
 import { getLastTrackId } from "./lib/ableton";
 import { merge } from "./lib/merge";
 import { join } from 'path';
+import { $ } from 'bun';
 
 const command = createCommand('merge-driver')
     .argument('<ours>', 'Ours file')
@@ -15,7 +15,8 @@ const command = createCommand('merge-driver')
     .action(async (_oursPath, _basePath, _theirsPath, flags, command) => {
         const _overwrite = flags.overwrite || true;
 
-        const project = readProjectInfo(process.cwd());
+        const toplevel = await $`git rev-parse --show-toplevel`.text();
+        const project = await readProjectInfo(toplevel);
         if (!project) {
             console.error('No project info found');
             process.exit(1);

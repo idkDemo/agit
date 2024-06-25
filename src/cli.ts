@@ -3,6 +3,8 @@ import split from './split.script';
 import format from './format.script';
 import merge_driver from './merge-driver.script';
 import combine from './combine.script';
+import init from './init.script';
+import clone from './clone.script';
 import debug_xml from './debug.xml.script';
 import debug_add_track from './debug.add-track'
 import lfs_folder from './lfs/folder-agent/folder-agent'
@@ -11,6 +13,7 @@ import { $ } from 'bun';
 
 const gitHelp = await $`git help`.quiet();
 const program = new Command();
+
 program
     .description('A git-wrapper with a few extra features that help you manage your ableton projects with ease !')
     .version('0.0.1')
@@ -20,6 +23,8 @@ program
     .addCommand(combine)
     .addCommand(debug_xml)
     .addCommand(debug_add_track)
+    .addCommand(init)
+    .addCommand(clone)
     // //LFS Related commands
     .addCommand(lfs_folder)
     .addHelpText('afterAll', `

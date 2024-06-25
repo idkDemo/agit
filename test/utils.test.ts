@@ -1,5 +1,6 @@
-import { build, parse } from '../src/lib/parser';
-import { changeNextPointeeId, getAbletonVersion, getNode, getNodeWithAttribute, returnChildsWithoutTextNode } from '../src/lib/utils';
+import { changeNextPointeeId, getAbletonVersion } from '../src/lib/ableton';
+import { parse } from '../src/lib/parser';
+import { getNode, getNodeWithAttribute, returnChildsWithoutTextNode } from '../src/lib/utils';
 import { describe, it, expect } from 'bun:test';
 import xpath from 'xpath';
 
