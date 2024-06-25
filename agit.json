@@ -5,5 +5,5 @@
   "suggest": "git",
   "homepage": "https://github.com/idkDemo/agit",
   "hash": "1f90f1c4f7abec3894fff108e43a2b7e",
-  "bin": "./release/agit.exe"
+  "bin": "https://github.com/idkDemo/agit/blob/master/release/agit.exe"
 }
